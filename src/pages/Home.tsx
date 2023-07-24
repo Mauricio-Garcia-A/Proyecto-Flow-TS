@@ -20,6 +20,7 @@ export const Home: React.FC<Props> = ({ cities }) => {
         {loadingWeather
           ? <h1>CARGANDO ...</h1>
           : <article>
+              <h1>{weatherCitySelected.nameCity}</h1>
               <h2>{weatherCitySelected.weatherDescription}</h2>
               <p>{weatherCitySelected.temperature}</p>
             </article>

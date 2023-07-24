@@ -7,9 +7,10 @@ export function getWeatherCurrent({ lat, lon }) {
   return fetch(URL_WEATHER)
     .then(response => response.json())
     .then(data => {
-      const { weather, main, wind, clouds, visibility, sys, dt } = data
+      const { weather, main, wind, clouds, visibility, sys, dt, name } = data
 
       const dataWeather = {
+        nameCity: name,
         weatherDescription: weather[0].description,
         weatherIcon: weather[0].icon,
         temperature: main.temp,
