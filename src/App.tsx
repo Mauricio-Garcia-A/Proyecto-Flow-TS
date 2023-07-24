@@ -1,13 +1,6 @@
 import './App.css'
-import Home from './pages/Home'
-
-const listOfCities = [
-  'San Carlos de Bariloche',
-  'Villa Carlos Paz',
-  'Cafayate',
-  'Ushuaia',
-  'Puerto Iguazú'
-]
+import { Home } from './pages/Home'
+import {LIST_OF_CITIES} from './utils/ListCities.js'
 
 function App (): JSX.Element {
   return (
@@ -16,7 +9,7 @@ function App (): JSX.Element {
         Encabezado de la APP
       </header>
       <main>
-        <Home />
+        <Home cities={LIST_OF_CITIES} />
       </main>
       <footer>
         Pie de Pagina de la APP
