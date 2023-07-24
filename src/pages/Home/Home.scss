@@ -1,0 +1,35 @@
+.container-weather {
+  background: rgba(255, 0, 0, 0.241);
+  width: 400px;
+  padding: 20px;
+}
+
+.container-forecast {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  div {
+    background: rgba(0, 0, 255, 0.323);
+    width: 100px;
+    text-align: center;
+    padding: 20px;
+
+    img {
+      width: 80px;
+    }
+
+  }
+}
+
+.container-home {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 30px;
+  background: rgba(0, 128, 0, 0.092);
+  padding: 20px;
+
+
+
+}

@@ -1,18 +1,21 @@
-import './App.css'
-import { Home } from './pages/Home'
+import './App.scss'
+import { Home } from './pages/Home/Home.jsx'
 import {LIST_OF_CITIES} from './utils/ListCities.js'
 
 function App (): JSX.Element {
   return (
     <>
-      <header>
-        Encabezado de la APP
+      <header className='header-app'>
+        <img src='/favicon.ico' alt='logo' />
+        <h1> App Estado del Clima</h1>
       </header>
       <main>
         <Home cities={LIST_OF_CITIES} />
       </main>
-      <footer>
-        Pie de Pagina de la APP
+      <footer className='footer-app'>
+        <section>
+            <p>© 2023 M.A.G. | Todos los derechos reservados.</p>
+        </section>
       </footer>
     </>
   )
