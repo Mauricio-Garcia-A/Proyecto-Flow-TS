@@ -47,11 +47,11 @@ export function getExtendedForecast({ lat, lon }) {
       const { list } = data
       const dataForecast = list.map(item => {
         return {
-          hour: new Date(item.dt*1000).toLocaleTimeString('en-AR', { hour12: false, hour: '2-digit', minute: '2-digit' }),
-          day: new Date(item.dt*1000).toLocaleDateString('es-AR'),
-          monthName: new Date(item.dt*1000).toLocaleDateString('es-AR', { month: 'long' }),
-          dayName: new Date(item.dt*1000).toLocaleDateString('es-AR', { weekday: 'short' }),
-          dayNumber: new Date(item.dt*1000).toLocaleDateString('es-AR', { day: 'numeric' }),
+          hour: new Date(item.dt * 1000).toLocaleTimeString('en-AR', { hour12: false, hour: '2-digit', minute: '2-digit' }),
+          day: new Date(item.dt * 1000).toLocaleDateString('es-AR'),
+          monthName: new Date(item.dt * 1000).toLocaleDateString('es-AR', { month: 'long' }),
+          dayName: new Date(item.dt * 1000).toLocaleDateString('es-AR', { weekday: 'short' }),
+          dayNumber: new Date(item.dt * 1000).toLocaleDateString('es-AR', { day: 'numeric' }),
           icon: item.weather[0].icon,
           description: item.weather[0].description,
           temperature: item.main.temp,
@@ -92,12 +92,9 @@ export function getExtendedForecast({ lat, lon }) {
         )
       })
 
-      console.log()
       return daysForecast
     })
-    .catch(err =>
-      console.log(`getExtendedForecast - Error Servicio API: ${err}`)
-    )
+    .catch(err => { console.log(`getExtendedForecast - Error Servicio API: ${err}`) })
 }
 
 // Servicio De Geocodificacion de Cidad (Geocoding API) determinados por (nombre})

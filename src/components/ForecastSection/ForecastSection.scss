@@ -1,0 +1,17 @@
+
+.container-forecast {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  div {
+    background: rgba(255, 255, 255, 0.558);
+    width: 100px;
+    text-align: center;
+    padding: 20px;
+
+    img {
+      width: 80px;
+    }
+
+  }
+}

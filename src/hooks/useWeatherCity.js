@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { getWeatherCurrent, getExtendedForecast } from '../services/getWeather.js'
 import { useSearchCityById } from './useSearchCityById.js'
+import { useCurrentDate } from './useCurrentDate.js'
 
 export function useWeatherCity ({ idCity }) {
   const [weatherCitySelected, setWeatherCitySelected] = useState(
@@ -59,7 +60,7 @@ export function useWeatherCity ({ idCity }) {
       ]
     }]
   )
-
+  const [currentDateFormatted, setCurrentDateFormatted] = useState('')
   const [loadingWeather, setLoadingWeather] = useState(true)
   const [loadingForecast, setLoadingForecast] = useState(true)
 
@@ -68,9 +69,12 @@ export function useWeatherCity ({ idCity }) {
     setLoadingWeather(true)
 
     const citySelected = useSearchCityById({ id: idCity })
+    const { currentDate } = useCurrentDate()
+
     void getWeatherCurrent({ lat: citySelected.coord.lat, lon: citySelected.coord.lon })
       .then(dataWeather => {
         setWeatherCitySelected(dataWeather)
+        setCurrentDateFormatted(currentDate)
         setLoadingWeather(false)
       })
 
@@ -83,5 +87,5 @@ export function useWeatherCity ({ idCity }) {
     // getSearchCity({nameCity:'merlo'})
   }, [idCity])
 
-  return { weatherCitySelected, extendedForecast, loadingWeather, loadingForecast }
+  return { weatherCitySelected, extendedForecast, loadingWeather, loadingForecast, currentDateFormatted }
 }
