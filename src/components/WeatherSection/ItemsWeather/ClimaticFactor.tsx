@@ -1,3 +1,4 @@
+import { type WeatherCity } from '../../../types'
 import CloudPercentage from '../../Icons/CloudPercentage'
 import HumidityIcon from '../../Icons/HumidityIcon'
 import PressureIcon from '../../Icons/PressureIcon'
@@ -5,7 +6,7 @@ import VisibilityIcon from '../../Icons/VisibilityIcon'
 
 interface Props {
   factor: string
-  value: number
+  value: WeatherCity[ 'pressure' | 'humidity' | 'visibility' | 'cloudPercentage' ]
   position: string
 }
 

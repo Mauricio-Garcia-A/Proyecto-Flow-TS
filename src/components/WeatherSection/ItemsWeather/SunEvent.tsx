@@ -1,9 +1,10 @@
+import { type WeatherCity } from '../../../types'
 import SunRiseIcon from '../../Icons/SunRiseIcon'
 import SunSetIcon from '../../Icons/SunSetIcon'
 
 interface Props {
   sunEvent: string
-  hourMinute: string
+  hourMinute: WeatherCity['sunRise' | 'sunSet']
 }
 export const SunEvent: React.FC<Props> = ({ sunEvent, hourMinute }) => {
   let sunrise = true

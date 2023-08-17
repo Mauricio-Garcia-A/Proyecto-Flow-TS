@@ -1,8 +1,9 @@
+import { type WeatherCity } from '../../../types'
 import TemperatureIcon from '../../Icons/TemperatureIcon'
 
 interface Props {
-  temperature: number
-  thermalSensation: number
+  temperature: WeatherCity['temperature']
+  thermalSensation: WeatherCity['thermalSensation']
 }
 
 export const TemperatureInfo: React.FC<Props> = ({ temperature, thermalSensation }) => {

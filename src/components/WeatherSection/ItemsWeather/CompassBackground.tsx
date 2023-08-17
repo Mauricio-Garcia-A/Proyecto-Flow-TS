@@ -1,7 +1,8 @@
 import React from 'react'
+import { type WeatherCity } from '../../../types'
 
 interface Props {
-  windDeg: number
+  windDeg: WeatherCity['windDeg']
 }
 
 export const CompassBackground: React.FC<Props> = ({ windDeg }) => {

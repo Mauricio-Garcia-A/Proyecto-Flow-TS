@@ -1,6 +1,8 @@
+import { type WeatherCity } from '../../../types'
+
 interface Props {
-  weatherIcon: string
-  weatherDescription: string
+  weatherIcon: WeatherCity['weatherIcon']
+  weatherDescription: WeatherCity['weatherDescription']
 }
 
 export const StateWeather: React.FC<Props> = ({ weatherIcon, weatherDescription }) => {

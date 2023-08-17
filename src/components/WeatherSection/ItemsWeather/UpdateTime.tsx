@@ -1,9 +1,10 @@
+import { type WeatherCity } from '../../../types'
 import ClockUpdateIcon from '../../Icons/ClockUpdateIcon'
 
 interface Props {
-  dateHourMinute: string
-  dateWeekday: string
-  dateDayMoment: string
+  dateHourMinute: WeatherCity['dateHourMinute']
+  dateWeekday: WeatherCity['dateWeekday']
+  dateDayMoment: WeatherCity['dateDayMoment']
 }
 
 export const UpdateTime: React.FC<Props> = ({ dateHourMinute, dateWeekday, dateDayMoment }) => {

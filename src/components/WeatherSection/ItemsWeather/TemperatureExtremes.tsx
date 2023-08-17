@@ -1,9 +1,10 @@
+import { type WeatherCity } from '../../../types'
 import TempMaxIcon from '../../Icons/TempMaxIcon'
 import TempMinIcon from '../../Icons/TempMinIcon'
 
 interface Props {
   temperature: string
-  value: number
+  value: WeatherCity['temperature']
 }
 
 export const TemperatureExtremes: React.FC<Props> = ({ temperature, value }) => {

@@ -1,8 +1,9 @@
 import CalendarIcon from '../../Icons/CalendarIcon'
 import { MapLocationIcon } from '../../Icons/MapLocationIcon'
+import { type WeatherCity } from '../../../types'
 
 interface Props {
-  nameCity: string
+  nameCity: WeatherCity['nameCity']
   currentDate: string
 }
 

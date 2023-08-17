@@ -1,9 +1,11 @@
+import { type WeatherCity } from '../../../types'
+
 /* eslint-disable @typescript-eslint/restrict-plus-operands */
 interface Props {
-  sunRise: string
-  sunSet: string
-  dateHourMinute: string
-  dateDayMoment: string
+  sunRise: WeatherCity['sunRise']
+  sunSet: WeatherCity['sunSet']
+  dateHourMinute: WeatherCity['dateHourMinute']
+  dateDayMoment: WeatherCity['dateDayMoment']
 }
 
 export const SunBarProgress: React.FC<Props> = ({ sunRise, sunSet, dateHourMinute, dateDayMoment }) => {
