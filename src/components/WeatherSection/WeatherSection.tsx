@@ -11,6 +11,7 @@ import { WindInfo } from './ItemsWeather/WindInfo'
 import { ClimaticFactor } from './ItemsWeather/ClimaticFactor'
 import { TemperatureExtremes } from './ItemsWeather/TemperatureExtremes'
 import { HeaderWeather } from './ItemsWeather/HeaderWeather'
+import formattedTimeError from '../../helper/formattedTimeError'
 
 interface Props {
   weatherCitySelected: WeatherCity
@@ -19,6 +20,7 @@ interface Props {
 
 export const WeatherSection: React.FC<Props> = ({ weatherCitySelected, currentDate }) => {
   const { windDirectionAbbreviation, windDirection } = formatWindDirection(weatherCitySelected.windDeg)
+  const { dateHourMinute } = formattedTimeError({ dateHourMinute: weatherCitySelected.dateHourMinute, dateDayMoment: weatherCitySelected.dateDayMoment })
 
   return (
     <section className='container-weather'>
@@ -35,7 +37,7 @@ export const WeatherSection: React.FC<Props> = ({ weatherCitySelected, currentDa
             <SunBarProgress
               sunRise={weatherCitySelected.sunRise}
               sunSet={weatherCitySelected.sunSet}
-              dateHourMinute={weatherCitySelected.dateHourMinute}
+              dateHourMinute={dateHourMinute}
               dateDayMoment={weatherCitySelected.dateDayMoment}
             />
             <SunEvent hourMinute={weatherCitySelected.sunRise} sunEvent='sunRise' />
@@ -99,7 +101,7 @@ export const WeatherSection: React.FC<Props> = ({ weatherCitySelected, currentDa
               windDirection={windDirection}
             />
             <UpdateTime
-              dateHourMinute={weatherCitySelected.dateHourMinute}
+              dateHourMinute={dateHourMinute}
               dateWeekday={weatherCitySelected.dateWeekday}
               dateDayMoment={weatherCitySelected.dateDayMoment}
             />
