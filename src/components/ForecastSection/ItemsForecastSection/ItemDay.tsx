@@ -1,10 +1,9 @@
-import WindDirectionIcon from '../../Icons/WindDirectionIcon.tsx'
 import ModalDaySelected from '../../ModalDaySelected/ModalDaySelected.tsx'
 import { type Forecast } from '../../../types'
+import { ContentModalGraphicWeather } from '../../ModalDaySelected/ItemsModal/ContentModalGraphicWeather.tsx'
 
 export const ItemDay = (
   { monthName, dayName, dayNumber, tempMin, tempMax, icon, description, dataHours }: Pick<Forecast, 'monthName' | 'dayName' | 'dayNumber' | 'description' | 'icon' | 'tempMax' | 'tempMin' | 'dataHours'>
-
 ) => {
   return (
     <article className="container-item-day">
@@ -29,17 +28,11 @@ export const ItemDay = (
           number={dayNumber}
           month={monthName}
         >
-          <article>
-            {dataHours.map((dataHour, i: number) => {
-              return <div key={`hora-${i}`} style={{ display: 'flex', gap: '10px' }}>
-                <p >{dataHour.hour} hs</p>
-                <p>{dataHour.temperature} °C</p>
-                <img src={`/IconsWeather/${dataHour.icon}.png`} alt='icon-weather' style={{ width: '30px' }} />
-                <WindDirectionIcon fill='white' width='15px' style={{ transform: `rotate(${dataHour.windDirection}deg)` }} />
-                <p>{dataHour.windSpeed} m/s </p>
-              </div>
-            })}
-          </article>
+          <ContentModalGraphicWeather
+            tempMax={tempMax}
+            tempMin={tempMin}
+            dataHours={dataHours }
+          />
         </ModalDaySelected>
       </footer>
     </article>
