@@ -5,6 +5,8 @@ import { useWeatherCity } from '../../hooks/useWeatherCity.js'
 import './Home.scss'
 import { WeatherSection } from '../../components/WeatherSection/WeatherSection'
 import { ForecastSection } from '../../components/ForecastSection/ForecastSection'
+import { PlaceholderWeatherSection } from '../../components/WeatherSection/PlaceholderWeatherSection/PlaceholderWeatherSection.js'
+import { PlaceholderForecastSection } from '../../components/ForecastSection/PlaceholderForecastSection/PlaceholderForecastSection.js'
 
 interface Props {
   cities: ListOfCities
@@ -22,13 +24,13 @@ export const Home: React.FC<Props> = ({ cities }) => {
       </header>
       <main>
         {loadingWeather
-          ? <h1>CARGANDO ...</h1>
+          ? <PlaceholderWeatherSection />
           : <WeatherSection weatherCitySelected={weatherCitySelected} currentDate={currentDateFormatted} />
         }
       </main>
       <footer>
         {loadingForecast
-          ? <h1>CARGANDO ...</h1>
+          ? <PlaceholderForecastSection />
           : <ForecastSection extendedForecast={extendedForecast} />
         }
       </footer>
