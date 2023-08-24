@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react'
 import { getWeatherCurrent, getExtendedForecast } from '../services/getWeather.js'
-import { useSearchCityById } from './useSearchCityById.js'
 import { useCurrentDate } from './useCurrentDate.js'
 
-export function useWeatherCity ({ idCity }) {
+export function useWeatherCity ({ lat, lon }) {
   const [weatherCitySelected, setWeatherCitySelected] = useState(
     {
       cloudPercentage: 100,
@@ -68,24 +67,23 @@ export function useWeatherCity ({ idCity }) {
     setLoadingForecast(true)
     setLoadingWeather(true)
 
-    const citySelected = useSearchCityById({ id: idCity })
     const { currentDate } = useCurrentDate()
 
-    void getWeatherCurrent({ lat: citySelected.coord.lat, lon: citySelected.coord.lon })
+    void getWeatherCurrent({ lat, lon })
       .then(dataWeather => {
         setWeatherCitySelected(dataWeather)
         setCurrentDateFormatted(currentDate)
         setLoadingWeather(false)
       })
 
-    void getExtendedForecast({ lat: citySelected.coord.lat, lon: citySelected.coord.lon })
+    void getExtendedForecast({ lat, lon })
       .then(daysForecast => {
         setExtendedForecast(daysForecast)
         setLoadingForecast(false)
       })
 
     // getSearchCity({nameCity:'merlo'})
-  }, [idCity])
+  }, [lat])
 
   return { weatherCitySelected, extendedForecast, loadingWeather, loadingForecast, currentDateFormatted }
 }

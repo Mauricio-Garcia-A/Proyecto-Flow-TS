@@ -1,34 +1,31 @@
-import { type ListOfCities } from '../../types'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import Select from 'react-select'
 
 import './SelectorCity.scss'
 import CityLocationIcon from '../Icons/CityLocationIcon'
+import { ContextListCities } from '../../context/ContextListCities'
 
-interface Props {
-  cities: ListOfCities
-  setCity: any
-}
+export const SelectorCity = () => {
+  const { setIdCitySelected, listCities } = useContext(ContextListCities)
 
-export const SelectorCity: React.FC<Props> = ({ cities, setCity }) => {
-  const [listCities, setListCities] = useState(
-    cities.map(item => ({
-      value: item.id,
-      label: item.name,
+  const [citiesFomated, setCitiesFomated] = useState(
+    listCities.map(city => ({
+      value: city.id,
+      label: city.name,
       isDisabled: false
     }))
   )
 
   const handleSelectChange = (event: React.ChangeEvent<HTMLDivElement>) => {
     // event.preventDefault()
-    const updatedCities = listCities.map(item => (
+    const updatedCities = citiesFomated.map(city => (
       {
-        ...item,
-        isDisabled: item.value === event.value // es igual que decir ( item.value === event.value  ? true : false )
+        ...city,
+        isDisabled: city.value === event.value // es igual que decir ( city.value === event.value  ? true : false )
       }
     ))
-    setListCities(updatedCities)
-    setCity(event.value)
+    setCitiesFomated(updatedCities)
+    setIdCitySelected(event.value)
   }
 
   const customStyles = {
@@ -75,8 +72,8 @@ export const SelectorCity: React.FC<Props> = ({ cities, setCity }) => {
         <h1>LISTA DE CIUDADES</h1>
       </label>
       <Select
-        defaultValue={listCities[0]}
-        options={listCities}
+        defaultValue={citiesFomated[0]}
+        options={citiesFomated}
         onChange={handleSelectChange}
 
         isLoading={false}

@@ -1,4 +1,5 @@
 import './App.scss'
+import { ContextListCitiesProvider } from './context/ContextListCities.js'
 import { Home } from './pages/Home/Home.jsx'
 import {LIST_OF_CITIES} from './utils/ListCities.js'
 
@@ -10,7 +11,9 @@ function App (): JSX.Element {
         <h1> App Estado del Clima</h1>
       </header>
       <main>
-        <Home cities={LIST_OF_CITIES} />
+        <ContextListCitiesProvider >
+          <Home cities={LIST_OF_CITIES} />
+        </ContextListCitiesProvider>
       </main>
       <footer className='footer-app'>
         <section>

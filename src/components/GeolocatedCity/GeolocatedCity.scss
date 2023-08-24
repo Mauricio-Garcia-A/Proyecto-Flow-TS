@@ -1,0 +1,133 @@
+.switch-geo-city {
+  width: 80px;
+  height: 40px;
+  background: rgba(143, 143, 143, 0.24);
+  border-radius: 50px;
+  position: relative;
+  border: 1px solid white;
+
+  height: 40px;
+  border-radius: 30px;
+  background: #13121247;
+
+  box-shadow: 0px 7px 20px 1px rgba(0, 0, 0, 0.463);
+  border: 1px solid rgba(253, 253, 253, 0.3);
+  cursor: pointer;
+  display: flex;
+  text-align: center;
+  font-size: 15pt;
+
+  display: flex;
+  align-items: center;
+
+
+  &:hover {
+    // background: rgba(80, 80, 80, 0.384);
+
+    border: 1px solid rgba(253, 253, 253, 0.7);
+
+  }
+  &:active {
+    border: 1px solid rgb(55, 112, 245);
+    background: rgba(80, 80, 80, 0.384);
+  }
+  input {}
+
+  div {
+    transition: all 1s ease;
+
+    svg {
+      transition: all 1s ease;
+
+    }
+  }
+
+  div.active {
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    left: 38px;
+    margin: 5px;
+    background: rgba(0, 0, 0, 0.482);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    opacity: 1;
+    box-shadow: 0px 0px 13px 0px rgba(241, 187, 40, 0.701);
+    border: 1px solid rgba(0, 0, 0, 0.155);
+
+    svg {
+      fill: rgba(66, 60, 156, 0.756);
+    }
+  }
+
+  div.desactive {
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    left: 0;
+    margin: 5px;
+    background: rgba(0, 0, 0, 0.482);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    opacity: 0.8;
+    // box-shadow: 0px 0px 8px 0px rgba(137, 125, 13, 0);
+    border: 1px solid rgba(0, 0, 0, 0.155);
+
+    svg {
+      fill: rgba(255, 91, 91, 0.386);
+    }
+  }
+}
+
+.container-geolocated-city {
+  header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.4;
+  }
+
+  main {
+    display: flex;
+    gap: 20px;
+    justify-content: left;
+
+    article {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: start;
+      gap: 10px;
+
+      button {
+        background: rgba(44, 44, 44, 0.593);
+        opacity: 0.5;
+        &:hover {
+          opacity: 0.8;
+        }
+        &:active {
+          opacity: 1;
+        }
+        &:disabled {
+          opacity: 0.1;
+          cursor:default;
+
+        }
+      }
+
+    }
+  }
+
+  h1 {
+    color: black;
+
+  }
+
+  p {
+    color: white;
+  }
+}
