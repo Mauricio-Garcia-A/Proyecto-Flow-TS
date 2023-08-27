@@ -9,6 +9,7 @@ import { PlaceholderForecastSection } from '../../components/ForecastSection/Pla
 import { GeolocatedCity } from '../../components/GeolocatedCity/GeolocatedCity.js'
 import { useSearchCityById } from './../../hooks/useSearchCityById.js'
 import { ContextListCities } from '../../context/ContextListCities.js'
+import { SearchCity } from '../../components/SearchCity/SearchCity.js'
 
 export const Home = () => {
   const contextValues = useContext(ContextListCities)
@@ -20,9 +21,10 @@ export const Home = () => {
   return (
     <section className='container-home'>
 
-      <header className='header-home'>
+      <header className='header-home' >
         <GeolocatedCity />
         <SelectorCity />
+        <SearchCity />
       </header>
       <main>
         {loadingWeather

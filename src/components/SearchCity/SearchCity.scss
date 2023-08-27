@@ -1,0 +1,109 @@
+.container-search-city {
+  width: 400px;
+
+
+  header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.5;
+    color: black;
+    gap: 15px;
+    text-align: center;
+    font-size: 10pt;
+    padding-bottom: 10px;
+  }
+
+  main {
+    position: relative;
+    height: 42px;
+    input {
+      position: absolute;
+
+      color: rgba(255, 255, 255, 0.7);
+      width: 100%;
+      background: rgba(143, 143, 143, 0.24);
+      border-radius: 50px;
+
+      border: 1px solid white;
+    
+      height: 40px;
+      border-radius: 30px;
+      background: #13121247;
+    
+      box-shadow: 0px 7px 20px 1px rgba(0, 0, 0, 0.463);
+      border: 1px solid rgba(253, 253, 253, 0.3);
+      cursor: auto;
+      display: flex;
+      text-align: center;
+      font-size: 15pt;
+    
+     
+      &:hover {
+      // background: rgba(80, 80, 80, 0.384);
+        border: 1px solid rgba(253, 253, 253, 0.7);
+      }
+      &:active {
+        border: 1px solid rgb(55, 112, 245);
+        background: rgba(80, 80, 80, 0.384);
+      }
+    }
+
+    .container-button-search {
+      cursor: pointer;
+      width: 40px;
+      position: absolute;
+      top: 10px;
+      right: 0;
+      border-left: 1px solid rgba(255, 255, 255, 0.649);
+      height: 22px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      svg {
+        fill: rgba(255, 255, 255, 0.718);
+
+        &:hover {
+          fill: rgba(252, 252, 252, 0.512);
+        }
+        &:active {
+          fill: rgba(25, 25, 41, 0.558);
+
+        }
+      }
+    }
+
+    .container-city-search-list {
+      position: absolute;
+      z-index: 10;
+      top: 50px;
+      height: auto;
+      width: 86%;
+      margin-left: 7%;
+      backdrop-filter: blur(8px);
+      background-color: rgba(0, 0, 0, 0.8);
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      padding: 0px 0px 20px 0px;
+      box-shadow: 0px 7px 20px 10px rgba(255, 255, 255, 0.3);
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 10px 5px 20px;
+        p {
+          padding: 0;
+        }
+      }
+      p {
+        padding: 10px 30px 10px 30px;
+        color: white;
+
+        &:hover {
+          background-color:rgba(192, 192, 192, 0.161)
+        }
+      }
+    }
+  }
+}

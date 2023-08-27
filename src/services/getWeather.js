@@ -106,7 +106,7 @@ export function getSearchCity({ nameCity }) {
     .then(data => {
       const cities = data.map((city, i) => {
         return {
-          id: (6000000 + i),
+          id: (Math.floor(Math.random() * 999999)),
           name: city.name,
           state: city.state,
           country: city.country,
