@@ -1,19 +1,40 @@
 .header-app {
   display: flex;
   align-items: center;
-  background-color: #222;
+  justify-content: center;
+  gap: 20px;
+  background-color: #69696993;
   color: white;
-
+  padding: 20px;
   img {
-    width: 50px;
+    width: 80px;
   }
 }
 
+.container-app {
+  
+  background-image: url('/FondoAPP.jpg'), linear-gradient(0.06deg, rgb(0, 0, 0) 0%,
+                  rgba(27, 24, 24, 0.432) 29.62%,
+                  rgba(255, 255, 255, 0.493) 58.47%,
+                  rgba(255, 255, 255, 0.329) 86.92%,
+                  rgb(255, 255, 255) 99.22%);
+  background-color: #00000066;
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
+.main-app {
+  display: flex;
+  justify-content: center;
+}
 .footer-app {
+  padding: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #222;
+  background-color: #69696993;
   color: white;
 
 }

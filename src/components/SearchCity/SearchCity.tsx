@@ -52,10 +52,6 @@ export const SearchCity = () => {
 
   return (
     <div className='container-search-city'>
-      <header>
-        <SearchCityIcon width='40px' />
-        <h1>BUSQUEDAD DE CIUDAD</h1>
-      </header>
       <main>
         <section>
           <input

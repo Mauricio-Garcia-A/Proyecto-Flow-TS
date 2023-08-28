@@ -46,10 +46,6 @@ export const GeolocatedCity = () => {
 
   return (
     <section className='container-geolocated-city'>
-      <header>
-        <GeolocationCityIcon width='50px' />
-        <h1>CIUDAD GEOLOCALIZADA</h1>
-      </header>
       <main>
         <article>
           <div className='switch-geo-city' onClick={handlerSwitch}>

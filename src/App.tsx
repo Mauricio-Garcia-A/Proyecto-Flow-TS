@@ -5,12 +5,12 @@ import {LIST_OF_CITIES} from './utils/ListCities.js'
 
 function App (): JSX.Element {
   return (
-    <>
+    <div className='container-app'>
       <header className='header-app'>
         <img src='/favicon.ico' alt='logo' />
-        <h1> App Estado del Clima</h1>
+        <h1> APP CLIMA - M.A.G</h1>
       </header>
-      <main>
+      <main className='main-app'>
         <ContextListCitiesProvider >
           <Home cities={LIST_OF_CITIES} />
         </ContextListCitiesProvider>
@@ -20,7 +20,7 @@ function App (): JSX.Element {
             <p>© 2023 M.A.G. | Todos los derechos reservados.</p>
         </section>
       </footer>
-    </>
+    </div>
   )
 }
 

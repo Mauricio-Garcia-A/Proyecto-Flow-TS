@@ -1,15 +1,13 @@
-import { useState, useContext, useEffect } from 'react'
-import { SelectorCity } from '../../components/SelectorCity/SelectorCity'
+import { useContext } from 'react'
 import { useWeatherCity } from '../../hooks/useWeatherCity.js'
 import './Home.scss'
 import { WeatherSection } from '../../components/WeatherSection/WeatherSection'
 import { ForecastSection } from '../../components/ForecastSection/ForecastSection'
 import { PlaceholderWeatherSection } from '../../components/WeatherSection/PlaceholderWeatherSection/PlaceholderWeatherSection.js'
 import { PlaceholderForecastSection } from '../../components/ForecastSection/PlaceholderForecastSection/PlaceholderForecastSection.js'
-import { GeolocatedCity } from '../../components/GeolocatedCity/GeolocatedCity.js'
 import { useSearchCityById } from './../../hooks/useSearchCityById.js'
 import { ContextListCities } from '../../context/ContextListCities.js'
-import { SearchCity } from '../../components/SearchCity/SearchCity.js'
+import { NavBar } from '../../components/NavBar/NavBar.js'
 
 export const Home = () => {
   const contextValues = useContext(ContextListCities)
@@ -21,24 +19,23 @@ export const Home = () => {
   return (
     <section className='container-home'>
 
-      <header className='header-home' >
-        <GeolocatedCity />
-        <SelectorCity />
-        <SearchCity />
+      <header className='header-home' style = {{ display: 'flex' }}>
+        <NavBar />
       </header>
-      <main>
-        {loadingWeather
-          ? <PlaceholderWeatherSection />
-          : <WeatherSection weatherCitySelected={weatherCitySelected} currentDate={currentDateFormatted} />
-        }
-      </main>
-      <footer>
-        {loadingForecast
-          ? <PlaceholderForecastSection />
-          : <ForecastSection extendedForecast={extendedForecast} />
-        }
-      </footer>
-
+      <div className='container-content-main-home'>
+        <main>
+          {loadingWeather
+            ? <PlaceholderWeatherSection />
+            : <WeatherSection weatherCitySelected = {weatherCitySelected} currentDate={currentDateFormatted} />
+          }
+        </main>
+        <footer>
+          {loadingForecast
+            ? <PlaceholderForecastSection />
+            : <ForecastSection extendedForecast={extendedForecast} />
+          }
+        </footer>
+      </div>
     </section>
   )
 }

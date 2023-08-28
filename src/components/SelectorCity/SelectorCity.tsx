@@ -2,7 +2,6 @@ import { useState, useContext } from 'react'
 import Select from 'react-select'
 
 import './SelectorCity.scss'
-import CityLocationIcon from '../Icons/CityLocationIcon'
 import { ContextListCities } from '../../context/ContextListCities'
 
 export const SelectorCity = () => {
@@ -32,9 +31,9 @@ export const SelectorCity = () => {
     control: (baseStyles: any, state: { isFocused: boolean }) => ({
       ...baseStyles,
       width: '400px',
-      height: '40px',
+      height: '43px',
       borderRadius: '30px',
-      background: state.isFocused ? '#13121247' : 'rgba(80, 80, 80, 0.384)',
+      background: state.isFocused ? 'rgba(80, 80, 80, 0.384)' : '#13121247',
       boxShadow: '0px 7px 20px 1px rgba(0, 0, 0, 0.463)',
       border: '1px solid rgba(253, 253, 253, 0.3)',
       cursor: 'pointer',
@@ -67,10 +66,6 @@ export const SelectorCity = () => {
 
   return (
     <section className='container-selector-city'>
-      <label>
-        <CityLocationIcon width='35px' fill='rgba(0, 0, 0, 0.5)' />
-        <h1>LISTA DE CIUDADES</h1>
-      </label>
       <Select
         defaultValue={citiesFomated[0]}
         options={citiesFomated}
