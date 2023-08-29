@@ -31,7 +31,7 @@ export const SelectorCity = () => {
     control: (baseStyles: any, state: { isFocused: boolean }) => ({
       ...baseStyles,
       width: '400px',
-      height: '43px',
+      height: '41px',
       borderRadius: '30px',
       background: state.isFocused ? 'rgba(80, 80, 80, 0.384)' : '#13121247',
       boxShadow: '0px 7px 20px 1px rgba(0, 0, 0, 0.463)',
@@ -47,7 +47,7 @@ export const SelectorCity = () => {
       width: '86%',
       marginLeft: '7%',
       backdropFilter: 'blur(8px)',
-      backgroundColor: 'rgba(0, 0, 0, 0.8)',
+      backgroundColor: 'rgba(14, 14, 14, 0.95)',
       borderRadius: '10px',
       border: '1px solid rgba(255, 255, 255, 0.5)',
       padding: '20px 0px 20px 0px ',

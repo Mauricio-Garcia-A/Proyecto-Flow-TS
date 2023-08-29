@@ -31,7 +31,11 @@ $colorBorder:rgba(255, 255, 255, 0.247);
         transition: width 0.5s ease;
 
         h1 {
-          display: none;
+          font-size: 0pt;
+          opacity: 0;
+          white-space: nowrap;
+          transition: all 0.5s ease;
+
         }
 
         &.item1 {
@@ -59,7 +63,7 @@ $colorBorder:rgba(255, 255, 255, 0.247);
 
           h1 {
             font-size: 20pt;
-            display: flex;
+            opacity: 1;
           }
         }
         

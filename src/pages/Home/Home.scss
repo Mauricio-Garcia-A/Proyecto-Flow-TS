@@ -12,10 +12,10 @@
   border: 1px solid rgba(151, 144, 144, 0.445);
 
   background-image: url('/FondoHome.webp'), linear-gradient(0.06deg, rgb(0, 0, 0) 0%,
-                  rgba(27, 24, 24, 0.432) 29.62%,
-                  rgba(255, 255, 255, 0.493) 58.47%,
-                  rgba(255, 255, 255, 0.329) 86.92%,
-                  rgb(255, 255, 255) 99.22%);
+      rgba(27, 24, 24, 0.432) 29.62%,
+      rgba(255, 255, 255, 0.493) 58.47%,
+      rgba(255, 255, 255, 0.329) 86.92%,
+      rgb(255, 255, 255) 99.22%);
   background-color: #00000066;
   background-blend-mode: multiply;
   background-size: cover;
@@ -23,13 +23,13 @@
   background-repeat: no-repeat;
 
   box-shadow: 0px 1px 0px rgba(204, 204, 204, 0.13),
-          0px 2px 0px #c9c9c92c,
-          0px 1px 0px rgba(187, 187, 187, 0.356),
-          0px 4px 0px #b9b9b928,
-          -8px 16px 16px rgba(0, 0, 0, 0.753),
-          -16px 32px 32px rgba(0, 0, 0, 0.418),
-          -32px 64px 64px rgba(0, 0, 0, 0.507);
- 
+    0px 2px 0px #c9c9c92c,
+    0px 1px 0px rgba(187, 187, 187, 0.356),
+    0px 4px 0px #b9b9b928,
+    -8px 16px 16px rgba(0, 0, 0, 0.753),
+    -16px 32px 32px rgba(0, 0, 0, 0.418),
+    -32px 64px 64px rgba(0, 0, 0, 0.507);
+
   .container-content-main-home {
     border-left: 1px solid rgba(255, 255, 255, 0.218);
     border-right: 1px solid rgba(255, 255, 255, 0.218);
@@ -41,5 +41,22 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
- }
+  }
+
+  @media (max-width: 860px) {
+    margin-top: -60px;
+    margin-bottom: -60px;
+    transform: scale(.85);
+  }
+  @media (max-width: 670px) {
+    margin-top: -180px;
+    margin-bottom: -180px;
+    transform: scale(.65);
+  }
+  @media (max-width: 500px) {
+    margin-top: -260px;
+    margin-bottom: -260px;
+    transform: scale(.5);
+  }
+
 }

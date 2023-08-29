@@ -9,7 +9,9 @@ interface Props {
 
 export const UpdateTime: React.FC<Props> = ({ dateHourMinute, dateWeekday, dateDayMoment }) => {
   return (
-    <div className='container-time-last-update'>
+    <div className='container-update-time'>
+      <p><span>Última Actualización:</span></p>
+     <div className='container-time-last-update'>
       <ClockUpdateIcon fill='grey' width='25px' />
       <p> {dateHourMinute}</p>
 
@@ -18,5 +20,7 @@ export const UpdateTime: React.FC<Props> = ({ dateHourMinute, dateWeekday, dateD
         <h3> {dateDayMoment}</h3>
       </div>
     </div>
+  </div>
+   
   )
 }

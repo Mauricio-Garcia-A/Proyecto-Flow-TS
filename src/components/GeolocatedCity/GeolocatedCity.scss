@@ -102,6 +102,10 @@
       align-items: start;
       gap: 10px;
 
+      p span {
+        margin-left: 10px;
+      }
+
       button {
         background: rgba(44, 44, 44, 0.593);
         opacity: 0.5;

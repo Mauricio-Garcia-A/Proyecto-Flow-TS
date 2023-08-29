@@ -1,6 +1,11 @@
 .container-weather {
   padding: 20px;
   color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
 }
 
 .container-header-weather {
@@ -145,22 +150,36 @@
       }
     }
 
-    .container-time-last-update {
-      display: flex;
-      justify-content: center;
-      gap:5px;
-      padding-top: 10px;
-      p {
-        font-size: 30pt;
-
+    .container-update-time {
+      padding-top: 5px;
+      span { 
+        color: rgb(109, 109, 109);
+        font-size: 8pt;
       }
-      div {
+      .container-time-last-update {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap:5px;
         p {
-          color: rgb(160, 0, 0);
-          font-size: 12pt;
+          font-size: 30pt;
+  
+        }
+        div {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          p {
+            color: rgb(160, 0, 0);
+            font-size: 11pt;
+          }
         }
       }
+
+
     }
+    
 
     .container-wind-description {
       display: flex;
