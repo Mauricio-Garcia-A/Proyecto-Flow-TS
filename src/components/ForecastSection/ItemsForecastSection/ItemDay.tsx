@@ -18,7 +18,7 @@ export const ItemDay = (
           <p><b>Max:</b>{Math.round(tempMax)}°C</p>
         </section>
         <section className='section-information'>
-          <img src={`/IconsWeather/${icon}.png`} alt='icon-weather' />
+          <img src={`IconsWeather/${icon}.png`} alt='icon-weather' />
           <h3>{description}</h3>
         </section>
       </main>

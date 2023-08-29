@@ -7,7 +7,7 @@ function App (): JSX.Element {
   return (
     <div className='container-app'>
       <header className='header-app'>
-        <img src='/favicon.ico' alt='logo' />
+        <img src='favicon.ico' alt='logo' />
         <h1> APP CLIMA - M.A.G</h1>
       </header>
       <main className='main-app'>

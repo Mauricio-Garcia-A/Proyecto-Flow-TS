@@ -13,7 +13,7 @@ export const SearchCity = () => {
 
   let query = ' '
 
-  const handleInputChange = (event)  => {
+  const handleInputChange = (event) => {
     query = (event.target.value)
   }
 
@@ -25,7 +25,7 @@ export const SearchCity = () => {
     setQueryCity(query)
   }
 
-  const handleSelectedCity = (idSelected) => {
+  const handleSelectedCity = (idSelected: number) => {
     const newListCities = listCities
     const index1 = listCitiesSearched.findIndex(city => city.id === idSelected)
     const newCity = {
@@ -72,13 +72,13 @@ export const SearchCity = () => {
           {
             loadingSearch
               ? <p> Cargando... </p>
-              :<>
+              : <>
                 {
-                  !listCitiesSearched.length  // Si la lista esta bacia
+                  (listCitiesSearched?.length === 0) // Si la lista esta bacia
                     ? <h3>No se han encontrado redultados de su busqueda</h3>
-                    :listCitiesSearched.map(city => {
+                    : listCitiesSearched.map(city => {
                       return (
-                        <p key={city.id} onClick={()=>handleSelectedCity(city.id)}> {city.name}, {city.state}, {city.country}</p>
+                        <p key={city.id} onClick={() => handleSelectedCity(city.id)}> {city.name}, {city.state}, {city.country}</p>
                       )
                     })
                 }

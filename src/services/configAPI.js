@@ -1,7 +1,7 @@
 // Configuraciones de la URL del servicio API
 
 // URL del servicio
-export const API_URL = 'https://api.openweathermap.org/data/2.5'
+export const API_URL = 'https://api.openweathermap.org'
 
 // Key de usuario
 export const API_Key = '98106ac6cab0be22c5ed63f0ee3b452b'

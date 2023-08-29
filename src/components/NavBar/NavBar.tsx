@@ -49,7 +49,9 @@ export const NavBar = () => {
           <SelectorCity />
         </article>
         <article className={`item3 ${activeItem === 'item3' ? 'active' : ''}`} >
-          <SearchCity />
+          {
+             <SearchCity />
+          }
         </article>
       </main>
 

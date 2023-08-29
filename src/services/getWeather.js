@@ -2,7 +2,7 @@ import { API_URL, API_Key, UNITS, LANG, LIMIT } from './configAPI'
 
 // Servicio De Datos Mteorológicos Actuales (Current Weather Data) de Ciudad Determinada (LATITUD, LONGITUD)
 export function getWeatherCurrent({ lat, lon }) {
-  const URL_WEATHER = `${API_URL}/weather?lat=${lat}&lon=${lon}&appid=${API_Key}&units=${UNITS}&lang=${LANG}`
+  const URL_WEATHER = `${API_URL}/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_Key}&units=${UNITS}&lang=${LANG}`
 
   return fetch(URL_WEATHER)
     .then(response => response.json())
@@ -39,7 +39,7 @@ export function getWeatherCurrent({ lat, lon }) {
 
 // Servicio De Datos de Pronóstico Extendido de 5 días cada 3 horas (5 Day / 3 Hour Forecast) de Ciudad Determinada (LATITUD, LONGITUD)
 export function getExtendedForecast({ lat, lon }) {
-  const URL_EXTENDED_FORECAST = `${API_URL}/forecast?lat=${lat}&lon=${lon}&appid=${API_Key}&units=${UNITS}&lang=${LANG}`
+  const URL_EXTENDED_FORECAST = `${API_URL}/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_Key}&units=${UNITS}&lang=${LANG}`
 
   return fetch(URL_EXTENDED_FORECAST)
     .then(response => response.json())
@@ -99,7 +99,7 @@ export function getExtendedForecast({ lat, lon }) {
 
 // Servicio De Geocodificacion de Cidad (Geocoding API) determinados por (nombre})
 export function getSearchCity({ nameCity }) {
-  const URL_SEARCH_CITY = `http://api.openweathermap.org/geo/1.0/direct?q=${nameCity}&limit=${LIMIT}&appid=${API_Key}`
+  const URL_SEARCH_CITY = `${API_URL}/geo/1.0/direct?q=${nameCity}&limit=${LIMIT}&appid=${API_Key}`
 
   return fetch(URL_SEARCH_CITY)
     .then(response => response.json())

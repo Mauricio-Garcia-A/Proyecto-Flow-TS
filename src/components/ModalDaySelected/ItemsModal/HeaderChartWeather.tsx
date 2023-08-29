@@ -25,7 +25,7 @@ export const HeaderChartWeather: React.FC<Props> = ({ dataWeatherHours }) => {
             <WindDirectionIcon fill='white' width='13px' style={{ transform: `rotate(${dataHour.windDirection}deg)` }} />
             <p>{dataHour.windSpeed} m/s </p>
             <abbr title={dataHour.description} >
-              <img src={`/IconsWeather/${dataHour.icon}.png`} alt='icon-weather' style={{ width: '40px' }} />
+              <img src={`IconsWeather/${dataHour.icon}.png`} alt='icon-weather' style={{ width: '40px' }} />
             </abbr>
             <p>{dataHour.temperature} °C</p>
 

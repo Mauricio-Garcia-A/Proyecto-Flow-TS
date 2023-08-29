@@ -9,10 +9,10 @@ export const CompassBackground: React.FC<Props> = ({ windDeg }) => {
   return (
     <>
       <div className='container-background-compass'>
-        <img src='/brujula2.png' />
+        <img src='brujula2.webp' />
       </div>
       <div className='container-background-needle'>
-        <img src='/aguja2.png' style={{ transform: `rotate(${windDeg}deg)` }} />
+        <img src='aguja2.webp' style={{ transform: `rotate(${windDeg}deg)` }} />
       </div>
     </>
   )
