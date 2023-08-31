@@ -1,5 +1,4 @@
 import { useState, useContext } from 'react'
-import { SearchCityIcon } from '../Icons/SearchCityIcon'
 import { SearchIcon } from '../Icons/SearchIcon'
 import './SearchCity.scss'
 import { useSearchCityByName } from '../../hooks/useSearchCityByName'
@@ -8,12 +7,12 @@ import { ContextListCities } from '../../context/ContextListCities'
 export const SearchCity = () => {
   const { listCities, setListCities, setIdCitySelected } = useContext(ContextListCities)
   const [menuVisibility, setMenuVisibility] = useState(false)
-  const [queryCity, setQueryCity] = useState(null)
+  const [queryCity, setQueryCity] = useState(' ')
   const { listCitiesSearched, loadingSearch } = useSearchCityByName({ queryNameCity: queryCity })
 
-  let query = ' '
+  let query: string = ' '
 
-  const handleInputChange = (event) => {
+  const handleInputChange = (event: { target: { value: string } }) => { // Remplaza a "const handleInputChange = (event: React.FormEvent<HTMLInputElement>)"
     query = (event.target.value)
   }
 
@@ -30,7 +29,7 @@ export const SearchCity = () => {
     const index1 = listCitiesSearched.findIndex(city => city.id === idSelected)
     const newCity = {
       id: listCitiesSearched[index1].id,
-      name: listCitiesSearched[index1].nameCity,
+      name: listCitiesSearched[index1].name,
       state: listCitiesSearched[index1].state,
       country: listCitiesSearched[index1].country,
       coord: {
@@ -39,7 +38,7 @@ export const SearchCity = () => {
       }
     }
 
-    const index2 = newListCities.findIndex(city => city.id === newCity.id)
+    const index2 = newListCities.findIndex((city: { id: number }) => city.id === newCity.id)
     if (index2 !== -1) {
       newListCities[index2] = newCity
     } else {
@@ -64,10 +63,10 @@ export const SearchCity = () => {
             <SearchIcon width='15px' />
           </div>
         </section>
-        <section className='container-city-search-list' style={{ visibility: menuVisibility? 'visible':'hidden' }}>
+        <section className='container-city-search-list' style={{ visibility: menuVisibility ? 'visible' : 'hidden' }}>
           <header>
             <p>Resultados de la busqueda:</p>
-            <button onClick={() => setMenuVisibility(false)}>x</button>
+            <button onClick={() => { setMenuVisibility(false) }}>x</button>
           </header>
           {
             loadingSearch
@@ -78,7 +77,7 @@ export const SearchCity = () => {
                     ? <h3>No se han encontrado redultados de su busqueda</h3>
                     : listCitiesSearched.map(city => {
                       return (
-                        <p key={city.id} onClick={() => handleSelectedCity(city.id)}> {city.name}, {city.state}, {city.country}</p>
+                        <p key={city.id} onClick={() => { handleSelectedCity(city.id) }}> {city.name}, {city.state}, {city.country}</p>
                       )
                     })
                 }

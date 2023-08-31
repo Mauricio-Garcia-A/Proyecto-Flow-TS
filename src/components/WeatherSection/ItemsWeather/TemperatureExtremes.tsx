@@ -4,7 +4,7 @@ import TempMinIcon from '../../Icons/TempMinIcon'
 
 interface Props {
   temperature: string
-  value: WeatherCity['temperature']
+  value: WeatherCity['temperature'] | string
 }
 
 export const TemperatureExtremes: React.FC<Props> = ({ temperature, value }) => {

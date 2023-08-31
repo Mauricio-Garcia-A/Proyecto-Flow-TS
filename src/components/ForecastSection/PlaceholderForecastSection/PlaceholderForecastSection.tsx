@@ -1,7 +1,7 @@
 import { ItemDay } from '../ItemsForecastSection/ItemDay'
 import './../ForecastSection.scss'
 
-export const PlaceholderForecastSection: React.FC<Props> = ({ extendedForecast }) => {
+export const PlaceholderForecastSection = () => {
   return (
     <section className='container-forecast  placeholder'>
       <h1>

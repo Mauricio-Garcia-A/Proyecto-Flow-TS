@@ -4,7 +4,7 @@
 export const API_URL = 'https://api.openweathermap.org'
 
 // Key de usuario
-export const API_Key = '98106ac6cab0be22c5ed63f0ee3b452b'
+export const API_KEY = '98106ac6cab0be22c5ed63f0ee3b452b'
 
 // Unidades de medidas en Grados Cecius [Fahrenheit=(imperial), Celsius=(metric), Kelvin=(default)]
 export const UNITS = 'metric'

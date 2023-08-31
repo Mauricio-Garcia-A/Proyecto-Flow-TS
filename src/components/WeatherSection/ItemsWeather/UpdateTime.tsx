@@ -21,6 +21,6 @@ export const UpdateTime: React.FC<Props> = ({ dateHourMinute, dateWeekday, dateD
       </div>
     </div>
   </div>
-   
+
   )
 }

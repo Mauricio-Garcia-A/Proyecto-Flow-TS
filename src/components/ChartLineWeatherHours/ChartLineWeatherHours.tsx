@@ -27,13 +27,13 @@ interface temperature {
   temperature: DataHour['temperature']
 }
 interface Props {
-  tempMax: number
-  tempMin: number
+  tempMax: number | string
+  tempMin: number | string
   temperatures: temperature[]
 }
 
 export const ChartLineWeatherHours: React.FC<Props> = ({ tempMax, tempMin, temperatures }) => {
-  const optionsGraph = {
+  const optionsGraph: any = {
     responsive: false,
     plugins: {
       legend: {
@@ -55,8 +55,8 @@ export const ChartLineWeatherHours: React.FC<Props> = ({ tempMax, tempMin, tempe
     },
     scales: {
       y: {
-        min: (tempMin - 2),
-        max: (tempMax + 2),
+        min: ((typeof tempMin === 'number') ? (tempMin - 2) : tempMin),
+        max: ((typeof tempMax === 'number') ? (tempMax + 2) : tempMax),
         ticks: {
           color: 'grey',
           font: {
@@ -103,11 +103,11 @@ export const ChartLineWeatherHours: React.FC<Props> = ({ tempMax, tempMin, tempe
   }
 
   return (
-      <Line
-        options = {optionsGraph}
-        data={data}
-        width='500px'
-        height='120px'
-      />
+    <Line
+      options = {optionsGraph}
+      data={data}
+      width='500px'
+      height='120px'
+    />
   )
 }

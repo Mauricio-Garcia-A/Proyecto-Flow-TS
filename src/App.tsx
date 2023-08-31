@@ -1,7 +1,6 @@
 import './App.scss'
 import { ContextListCitiesProvider } from './context/ContextListCities.js'
 import { Home } from './pages/Home/Home.jsx'
-import {LIST_OF_CITIES} from './utils/ListCities.js'
 
 function App (): JSX.Element {
   return (
@@ -12,7 +11,7 @@ function App (): JSX.Element {
       </header>
       <main className='main-app'>
         <ContextListCitiesProvider >
-          <Home cities={LIST_OF_CITIES} />
+          <Home />
         </ContextListCitiesProvider>
       </main>
       <footer className='footer-app'>

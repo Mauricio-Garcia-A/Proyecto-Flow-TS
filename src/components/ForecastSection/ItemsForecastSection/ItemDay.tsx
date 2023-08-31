@@ -2,9 +2,18 @@ import ModalDaySelected from '../../ModalDaySelected/ModalDaySelected.tsx'
 import { type Forecast } from '../../../types'
 import { ContentModalGraphicWeather } from '../../ModalDaySelected/ItemsModal/ContentModalGraphicWeather.tsx'
 
-export const ItemDay = (
-  { monthName, dayName, dayNumber, tempMin, tempMax, icon, description, dataHours }: Pick<Forecast, 'monthName' | 'dayName' | 'dayNumber' | 'description' | 'icon' | 'tempMax' | 'tempMin' | 'dataHours'>
-) => {
+interface Props {
+  monthName: Forecast['monthName']
+  dayName: Forecast['dayName']
+  dayNumber: Forecast['dayNumber']
+  tempMin: Forecast['tempMin'] | string
+  tempMax: Forecast['tempMax'] | string
+  icon: Forecast['icon']
+  description: Forecast['description']
+  dataHours: Forecast['dataHours']
+}
+
+export const ItemDay: React.FC<Props> = ({ monthName, dayName, dayNumber, tempMin, tempMax, icon, description, dataHours }) => {
   return (
     <article className="container-item-day">
       <header>
@@ -14,8 +23,11 @@ export const ItemDay = (
       </header>
       <main>
         <section className='section-temperatures'>
-          <p><b>Min:</b>{Math.round(tempMin)}°C</p>
-          <p><b>Max:</b>{Math.round(tempMax)}°C</p>
+          <p>
+            <b>Min:</b>
+            {(typeof tempMin === 'number') ? Math.round(tempMin) : tempMin}°C
+            </p>
+          <p><b>Max:</b>{(typeof tempMax === 'number') ? Math.round(tempMax) : tempMax}°C</p>
         </section>
         <section className='section-information'>
           <img src={`IconsWeather/${icon}.png`} alt='icon-weather' />

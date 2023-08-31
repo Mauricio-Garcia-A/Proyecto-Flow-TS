@@ -1,10 +1,9 @@
 import { useContext, useState } from 'react'
 import CompassIcon from '../Icons/CompassIcon'
-import GeolocationCityIcon from '../Icons/GeolocationCityIcon'
-import './GeolocatedCity.scss'
 import getGeolocation from '../../services/getGeolocation'
 import { useWeatherCity } from '../../hooks/useWeatherCity'
 import { ContextListCities } from '../../context/ContextListCities'
+import './GeolocatedCity.scss'
 
 export const GeolocatedCity = () => {
   const { listCities, setListCities, setIdCitySelected } = useContext(ContextListCities)
@@ -28,7 +27,7 @@ export const GeolocatedCity = () => {
             lat: coords.lat
           }
         }
-        const index = newListCities.findIndex(city => city.id === newCity.id)
+        const index = newListCities.findIndex((city: { id: number }) => city.id === newCity.id)
         if (index !== -1) {
           newListCities[index] = newCity
         } else {

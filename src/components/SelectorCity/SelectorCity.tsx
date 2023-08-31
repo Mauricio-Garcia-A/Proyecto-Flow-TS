@@ -8,16 +8,17 @@ export const SelectorCity = () => {
   const { setIdCitySelected, listCities } = useContext(ContextListCities)
 
   const [citiesFomated, setCitiesFomated] = useState(
-    listCities.map(city => ({
+    listCities.map((city: { id: number, name: string }) => ({
       value: city.id,
       label: city.name,
       isDisabled: false
     }))
   )
 
-  const handleSelectChange = (event: React.ChangeEvent<HTMLDivElement>) => {
+  const handleSelectChange = (event: { value: number }) => { // Remplaza a "const handleSelectChange = (event: React.ChangeEvent<{ value: number }>)"
     // event.preventDefault()
-    const updatedCities = citiesFomated.map(city => (
+
+    const updatedCities = citiesFomated.map((city: { value: number }) => (
       {
         ...city,
         isDisabled: city.value === event.value // es igual que decir ( city.value === event.value  ? true : false )

@@ -1,5 +1,3 @@
-import { type WeatherCity } from '../../types'
-import './WeatherSection.scss'
 import formatWindDirection from '../../helper/formatWindDirection'
 import { SunBarProgress } from './ItemsWeather/SunBarProgress'
 import { CompassBackground } from './ItemsWeather/CompassBackground'
@@ -12,9 +10,11 @@ import { ClimaticFactor } from './ItemsWeather/ClimaticFactor'
 import { TemperatureExtremes } from './ItemsWeather/TemperatureExtremes'
 import { HeaderWeather } from './ItemsWeather/HeaderWeather'
 import formattedTimeError from '../../helper/formattedTimeError'
+import { type WeatherCity } from '../../types'
+import './WeatherSection.scss'
 
 interface Props {
-  weatherCitySelected: WeatherCity
+  weatherCitySelected: WeatherCity | any
   currentDate: string
 }
 

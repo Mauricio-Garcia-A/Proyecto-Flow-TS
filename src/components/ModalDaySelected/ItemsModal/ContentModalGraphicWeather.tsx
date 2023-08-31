@@ -5,7 +5,12 @@ import { type Forecast } from '../../../types'
 import { HeaderChartWeather } from './HeaderChartWeather'
 import './ContentModalGraphicWeather.scss'
 
-export const ContentModalGraphicWeather = ({ tempMax, tempMin, dataHours }: Pick<Forecast, 'tempMax' | 'tempMin' | 'dataHours'>) => {
+interface Props {
+  tempMin: Forecast['tempMin'] | string
+  tempMax: Forecast['tempMax'] | string
+  dataHours: Forecast['dataHours']
+}
+export const ContentModalGraphicWeather: React.FC<Props> = ({ tempMax, tempMin, dataHours }) => {
   const { temperatureList, dataWeatherHours } = BuildListTemperaturesHours({ dataHours })
 
   return (
@@ -13,11 +18,11 @@ export const ContentModalGraphicWeather = ({ tempMax, tempMin, dataHours }: Pick
       <article >
         <TemperatureExtremes
           temperature='max'
-          value={Math.round(tempMax)}
+          value={(typeof tempMax === 'number') ? Math.round(tempMax) : tempMax}
         />
         <TemperatureExtremes
           temperature='min'
-          value={Math.round(tempMin)}
+          value={(typeof tempMin === 'number') ? Math.round(tempMin) : tempMin}
         />
       </article>
       <article>
@@ -25,8 +30,8 @@ export const ContentModalGraphicWeather = ({ tempMax, tempMin, dataHours }: Pick
           dataWeatherHours = {dataWeatherHours}
         />
         <ChartLineWeatherHours
-          tempMax={Math.round(tempMax)}
-          tempMin={Math.round(tempMin)}
+          tempMax={(typeof tempMax === 'number') ? Math.round(tempMax) : tempMax}
+          tempMin={(typeof tempMin === 'number') ? Math.round(tempMin) : tempMin}
           temperatures={temperatureList}
         />
       </article>

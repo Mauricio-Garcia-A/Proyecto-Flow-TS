@@ -3,8 +3,8 @@ import WindDirectionIcon from '../../Icons/WindDirectionIcon'
 import { type WeatherCity } from '../../../types'
 
 interface Props {
-  windSpeed: WeatherCity['windSpeed']
-  windGust: WeatherCity['windGust']
+  windSpeed: WeatherCity['windSpeed'] | string
+  windGust: WeatherCity['windGust'] | string
   windDeg: WeatherCity['windDeg']
   windDirectionAbbreviation: string
   windDirection: string

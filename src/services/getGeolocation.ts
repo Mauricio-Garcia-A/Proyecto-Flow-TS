@@ -1,12 +1,12 @@
 import { useState } from 'react'
 
 interface Coords {
-  lat: number | null
-  lon: number | null
+  lat: number | undefined
+  lon: number | undefined
 }
 
 export default function getGeolocation () {
-  const [coords, setCoords] = useState<Coords>({ lat: null, lon: null })
+  const [coords, setCoords] = useState<Coords>({ lat: undefined, lon: undefined })
   const [errorGeo, setErrorGeo] = useState(false)
   const [loadingGeo, setLoadingGeo] = useState(false)
 

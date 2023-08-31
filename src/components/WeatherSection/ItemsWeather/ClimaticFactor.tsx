@@ -6,7 +6,7 @@ import VisibilityIcon from '../../Icons/VisibilityIcon'
 
 interface Props {
   factor: string
-  value: WeatherCity[ 'pressure' | 'humidity' | 'visibility' | 'cloudPercentage' ]
+  value: WeatherCity[ 'pressure' | 'humidity' | 'visibility' | 'cloudPercentage' ] | string
   position: string
 }
 

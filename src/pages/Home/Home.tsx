@@ -1,6 +1,5 @@
 import { useContext } from 'react'
 import { useWeatherCity } from '../../hooks/useWeatherCity.js'
-import './Home.scss'
 import { WeatherSection } from '../../components/WeatherSection/WeatherSection'
 import { ForecastSection } from '../../components/ForecastSection/ForecastSection'
 import { PlaceholderWeatherSection } from '../../components/WeatherSection/PlaceholderWeatherSection/PlaceholderWeatherSection.js'
@@ -8,13 +7,14 @@ import { PlaceholderForecastSection } from '../../components/ForecastSection/Pla
 import { useSearchCityById } from './../../hooks/useSearchCityById.js'
 import { ContextListCities } from '../../context/ContextListCities.js'
 import { NavBar } from '../../components/NavBar/NavBar.js'
+import './Home.scss'
 
 export const Home = () => {
   const contextValues = useContext(ContextListCities)
 
   const citySelected = useSearchCityById({ id: contextValues?.idCitySelected })
 
-  const { weatherCitySelected, extendedForecast, loadingWeather, loadingForecast, currentDateFormatted } = useWeatherCity({ lat: citySelected.coord.lat, lon: citySelected.coord.lon })
+  const { weatherCitySelected, extendedForecast, loadingWeather, loadingForecast, currentDateFormatted } = useWeatherCity({ lat: citySelected?.coord.lat, lon: citySelected?.coord.lon })
 
   return (
     <section className='container-home'>
@@ -26,7 +26,7 @@ export const Home = () => {
         <main>
           {loadingWeather
             ? <PlaceholderWeatherSection />
-            : <WeatherSection weatherCitySelected = {weatherCitySelected} currentDate={currentDateFormatted} />
+            : <WeatherSection weatherCitySelected={weatherCitySelected} currentDate={currentDateFormatted} />
           }
         </main>
         <footer>
